@@ -164,6 +164,24 @@ digit * addNumbers(digit * left, digit * right) {
 		result->data = sum;
 		
 	}
+	while (right!= NULL) {
+		digit *temp = result; //new digit;
+		//temp->data = result->data;
+		result = new digit;
+		result->data = sum;
+		result->next = temp;
+
+		right = right->next;
+		
+
+	}
+	while (left != NULL) {
+		digit *n = result;
+		result = new digit;
+		result->data = sum;
+		result->next = n;
+		left = left->next;
+	}
 
 	return result;
 
